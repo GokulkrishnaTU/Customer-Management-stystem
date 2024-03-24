@@ -1,38 +1,98 @@
+/*
+  Global styles for resetting margins, padding, and box-sizing,
+  and setting font-family for the entire document.
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/*
+  Styles for the root container of the application.
+  - Sets the width to 100% of the viewport.
+  - Applies a gradient background with border-box padding-box model.
+  - Defines a border and padding around the container.
+  - Sets font size, color, and family.
+  - Displays flex container to center its children.
+  - Specifies a gap between the children.
+  - Animates the background gradient.
+  - Sets the height to 100% of the viewport.
+*/
 .App {
+  width: 100%;
+  background: linear-gradient(#212121, #212121) padding-box,
+              linear-gradient(145deg, transparent 35%,#e81cff, #40c9ff) border-box;
+  border: 2px solid transparent;
+  padding: 32px 24px;
+  font-size: 14px;
+  font-family: inherit;
+  color: white;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  box-sizing: border-box;
+  background-size: 200% 100%;
+  animation: gradient 5s ease infinite;
+  height: 100%;
+  min-height: 100vh;
+}
+
+/*
+  Styles for the main content container within the application.
+  - Sets the width to 100% but limits it to a maximum of 1000px.
+*/
+.main-container {
+  width: 100%;
+  max-width: 1000px;
+}
+
+/* Style 7
+   ----------------------------- */
+   .heading h1 {
+    text-align: center;
+        font-size:30px;
+         font-weight:300; color:#222; letter-spacing:1px;
+        text-transform: uppercase;
+    
+        display: grid;
+        grid-template-columns: 1fr max-content 1fr;
+        grid-template-rows: 27px 0;
+        grid-gap: 20px;
+        align-items: center;
+        color: white;
+    }
+    
+    .heading h1:after,.heading h1:before {
+        content: " ";
+        display: block;
+        border-bottom: 1px solid #ffffff;
+        border-top: 1px solid #ffffff;
+        height: 5px;
+        background: linear-gradient(#212121, #212121) padding-box,
+      }
+    
+
+/*
+  Styles for the main header text.
+  - Centers the text horizontally.
+*/
+.main-header {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+
+
+/* responsive */
+
+@media (max-width:600px) {
+
+
+  .heading h1 {
+        font-size:15px;
+
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+ }

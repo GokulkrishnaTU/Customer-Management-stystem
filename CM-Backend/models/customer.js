@@ -2,6 +2,7 @@
 
 const mongoose = require('mongoose');
 
+// Define customer schema
 const customerSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -9,7 +10,8 @@ const customerSchema = new mongoose.Schema({
   },
   email: {
     type: String,
-    required: true
+    required: true,
+    unique: true // Ensure email uniqueness
   },
   phone: {
     type: String,
@@ -17,4 +19,5 @@ const customerSchema = new mongoose.Schema({
   }
 });
 
+// Create and export Customer model
 module.exports = mongoose.model('Customer', customerSchema);
