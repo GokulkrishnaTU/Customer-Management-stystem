@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { MDBBtn } from "mdb-react-ui-kit";
 import "../index.css";
 import { putApi } from "../controllers/apiService";
+import { apiConst } from "../constants/apiConstants";
 
 /**
  * Component for editing a customer
@@ -22,7 +23,7 @@ const EditCustomer = ({ customer, onUpdate }) => {
       // Send PUT request to update customer data
 
       const response = await putApi(
-        `http://localhost:5000/customers/${customer._id}`,
+        apiConst.ApiUpdateCustomers+customer._id,
         {
           name,
           email,

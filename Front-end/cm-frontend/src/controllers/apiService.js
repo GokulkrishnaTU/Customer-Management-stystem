@@ -38,14 +38,6 @@ export const handleDeleteCustomer = async (customerId, customers, deleteApi) => 
 };
 
 
-      // // Send PUT request to update customer data
-      // const response = await axios.put(`http://localhost:5000/customers/${customer._id}`, {
-      //   name,
-      //   email,
-      //   phone
-      // });
-      // // Call the onUpdate function with the updated customer data
-      // onUpdate(response.data);
 
 export const putApi = async (apiUrl ,{name,email,phone}) => {
   try {
